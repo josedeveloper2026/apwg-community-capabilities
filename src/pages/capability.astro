@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Capability" active="discover">
+  <div id="capability-root"></div>
+</Base>
+<script>
+  import { mountCapability } from '../scripts/capability-page';
+  const root = document.getElementById('capability-root');
+  if (root) mountCapability(root);
+</script>

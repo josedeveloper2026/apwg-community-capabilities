@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import {
+  ACCESS_LEVELS,
+  CAPABILITY_TYPES,
+  DELIVERY_METHODS,
+  ENTITY_TYPES,
+  THREAT_CATEGORIES,
+  VERIFICATION_STATUSES,
+} from '../lib/vocabulary';
+
+const groups = [
+  ['Entity types', ENTITY_TYPES],
+  ['Capability types', CAPABILITY_TYPES],
+  ['Threat categories', THREAT_CATEGORIES],
+  ['Access levels', ACCESS_LEVELS],
+  ['Verification', VERIFICATION_STATUSES],
+  ['Delivery methods', DELIVERY_METHODS],
+] as const;
+---
+<Base title="About Us" active="about" description="What the APWG community capability registry is for, and how to contribute.">
+  <div class="wrap about">
+    <header class="page-head">
+      <p class="kicker">About us</p>
+      <h1>A registry of capabilities, not a warehouse of data.</h1>
+      <p class="lede">Researchers and responders already build detection systems, datasets, and feeds. This prototype makes those capabilities easier to find.</p>
+    </header>
+    <section>
+      <h2>Why it exists</h2>
+      <p>At APWG eCrime 2026, organizations described work that other researchers often cannot discover from papers alone. The registry answers three questions: who offers a capability, how to ask for access, and which public write-up describes it.</p>
+      <p>The site does not host datasets, proxy queries, or execute services. Sharing arrangements stay with the provider.</p>
+    </section>
+    <section>
+      <h2>How to read a record</h2>
+      <p><strong>Documented</strong> means a public source describes the capability. <strong>Unverified</strong> means the listing comes from a public mention, usually a conference session, and an operational offering has not been confirmed. <strong>Provider confirmed</strong> is unused in the seed data. It is reserved for a record the provider has reviewed.</p>
+      <p>Sharing into this registry is a separate flag. A provider can run a member exchange and still be “not confirmed” here, because nobody has reviewed this copy of the record.</p>
+    </section>
+    <section>
+      <h2>How to add or correct a record</h2>
+      <p>The published registry is the file <code>src/data/registry.json</code>. Until there is an operated service, updates are pull requests.</p>
+      <ol>
+        <li>Use Add Capability. The record is stored in this browser and appears in search immediately.</li>
+        <li>Download the JSON.</li>
+        <li>Open a pull request that adds or updates the organization in <code>src/data/registry.json</code>.</li>
+        <li>Keep uncertain contacts, licenses, and endpoints empty. Do not invent them.</li>
+      </ol>
+      <p>You can also edit the JSON directly. <code>npm run validate</code> checks the file before a production build. The canonical shape is <code>src/schemas/example.json</code>, which is an illustration, not a real organization. The JSON Schema is <code>src/schemas/registry.schema.json</code>.</p>
+    </section>
+    <section>
+      <h2>Vocabulary</h2>
+      <p>Filters use these values. Records may include a new value later; the site will keep it and show it as written.</p>
+      <div class="vocab">
+        {groups.map(([title, items]) => (
+          <div>
+            <h3>{title}</h3>
+            <ul>
+              {items.map((item) => (
+                <li><code>{item.value}</code> — {item.label}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+    <section>
+      <h2>Seed data</h2>
+      <p>The initial organizations are public participants or hosts associated with APWG eCrime 2026, including APWG, Spamhaus, abuse.ch, Shadowserver, ChongLuaDao, the Global Signal Exchange, Oxford Information Labs, BforeAI, and research groups listed on the symposium program. Descriptions were checked against public pages on 4 November 2026. Conference-only sessions stay unverified as services.</p>
+    </section>
+    <section>
+      <h2>Run it</h2>
+      <p>Install dependencies once, then start the local site:</p>
+      <p><code>npm install</code><br /><code>npm run dev</code></p>
+      <p>After that install, search and the seed records work without a network connection. Browser-only additions stay in local storage on this computer.</p>
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Discover" active="discover" description="Search cybersecurity capabilities from the APWG community.">
+  <div id="discover-root"></div>
+</Base>
+<script>
+  import { mountDiscover } from '../scripts/discover';
+  const root = document.getElementById('discover-root');
+  if (root) mountDiscover(root);
+</script>

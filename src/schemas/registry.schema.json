@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apwg.org/schemas/community-capabilities/0.1.0",
+  "title": "APWG community capability registry",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "entities"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "entities": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entity" }
+    }
+  },
+  "$defs": {
+    "entity": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["entity_id", "name", "entity_type", "description", "capabilities"],
+      "properties": {
+        "entity_id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "entity_type": {
+          "type": "string",
+          "description": "Suggested: academic, nonprofit, commercial, government, community, other. Other values are allowed."
+        },
+        "description": { "type": "string", "minLength": 1 },
+        "website": { "type": ["string", "null"] },
+        "logo_url": { "type": ["string", "null"] },
+        "country": { "type": ["string", "null"] },
+        "parent_institution": { "type": ["string", "null"] },
+        "department": { "type": ["string", "null"] },
+        "points_of_contact": { "type": "array", "items": { "$ref": "#/$defs/contact" } },
+        "capabilities": { "type": "array", "items": { "$ref": "#/$defs/capability" } }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "title": { "type": ["string", "null"] },
+        "role": { "type": ["string", "null"] },
+        "email": { "type": ["string", "null"] },
+        "profile_url": { "type": ["string", "null"] }
+      }
+    },
+    "capability": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["capability_id", "name", "capability_type", "description"],
+      "properties": {
+        "capability_id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "capability_type": {
+          "type": "string",
+          "description": "Suggested: dataset, intelligence_feed, detection_service, collection_service, analysis_tool, research_model, platform, other."
+        },
+        "summary": { "type": ["string", "null"] },
+        "description": { "type": "string", "minLength": 1 },
+        "threat_categories": { "type": "array", "items": { "type": "string" } },
+        "keywords": { "type": "array", "items": { "type": "string" } },
+        "data_characteristics": { "$ref": "#/$defs/data" },
+        "interface": { "$ref": "#/$defs/interface" },
+        "access": { "$ref": "#/$defs/access" },
+        "points_of_contact": { "type": "array", "items": { "$ref": "#/$defs/contact" } },
+        "related_publications": { "type": "array", "items": { "$ref": "#/$defs/publication" } },
+        "references": { "$ref": "#/$defs/references" },
+        "verification": { "$ref": "#/$defs/verification" }
+      }
+    },
+    "data": {
+      "type": ["object", "null"],
+      "additionalProperties": true,
+      "properties": {
+        "data_types": { "type": "array", "items": { "type": "string" } },
+        "formats": { "type": "array", "items": { "type": "string" } },
+        "update_frequency": { "type": ["string", "null"] },
+        "geographic_coverage": { "type": "array", "items": { "type": "string" } },
+        "temporal_coverage": { "type": ["string", "null"] }
+      }
+    },
+    "interface": {
+      "type": ["object", "null"],
+      "additionalProperties": true,
+      "properties": {
+        "delivery_methods": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Suggested: download, api, web_portal, stream, on_request, software."
+        },
+        "endpoint_url": { "type": ["string", "null"] },
+        "documentation_url": { "type": ["string", "null"] }
+      }
+    },
+    "access": {
+      "type": ["object", "null"],
+      "additionalProperties": true,
+      "properties": {
+        "availability": { "type": ["string", "null"] },
+        "access_level": {
+          "type": ["string", "null"],
+          "description": "Suggested: public, registration_required, request_only, restricted, unknown."
+        },
+        "request_url": { "type": ["string", "null"] },
+        "authentication": { "type": ["string", "null"] },
+        "license": { "type": ["string", "null"] },
+        "usage_restrictions": { "type": "array", "items": { "type": "string" } },
+        "privacy_notes": { "type": ["string", "null"] }
+      }
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["title"],
+      "properties": {
+        "title": { "type": "string" },
+        "authors": { "type": "array", "items": { "type": "string" } },
+        "year": { "type": ["integer", "null"] },
+        "venue": { "type": ["string", "null"] },
+        "doi": { "type": ["string", "null"] },
+        "url": { "type": ["string", "null"] },
+        "relationship": { "type": ["string", "null"] }
+      }
+    },
+    "references": {
+      "type": ["object", "null"],
+      "additionalProperties": true,
+      "properties": {
+        "project_url": { "type": ["string", "null"] },
+        "repository_url": { "type": ["string", "null"] },
+        "dataset_url": { "type": ["string", "null"] },
+        "presentation_url": { "type": ["string", "null"] }
+      }
+    },
+    "verification": {
+      "type": ["object", "null"],
+      "additionalProperties": true,
+      "properties": {
+        "status": {
+          "type": ["string", "null"],
+          "description": "Suggested: unverified, documented, provider_confirmed."
+        },
+        "sharing_confirmed": { "type": "boolean" },
+        "claimed_by_provider": { "type": "boolean" },
+        "source_url": { "type": ["string", "null"] },
+        "last_verified_at": { "type": ["string", "null"], "format": "date" }
+      }
+    }
+  }
+}

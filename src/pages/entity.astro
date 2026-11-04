@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Organization" active="organizations">
+  <div id="entity-root"></div>
+</Base>
+<script>
+  import { mountEntity } from '../scripts/entity-page';
+  const root = document.getElementById('entity-root');
+  if (root) mountEntity(root);
+</script>

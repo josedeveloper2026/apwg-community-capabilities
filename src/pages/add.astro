@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Add a capability" active="add" description="Add an organization and its capabilities to the local registry.">
+  <div id="editor-root"></div>
+</Base>
+<script>
+  import { mountEditor } from '../scripts/editor';
+  const root = document.getElementById('editor-root');
+  if (root) mountEditor(root);
+</script>

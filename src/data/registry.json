@@ -1,0 +1,1668 @@
+{
+  "schema_version": "0.1.0",
+  "entities": [
+    {
+      "entity_id": "org-apwg",
+      "name": "Anti-Phishing Working Group",
+      "entity_type": "nonprofit",
+      "description": "The Anti-Phishing Working Group (APWG) describes its work as unifying the global response to cybercrime through curated data exchange, research, public policy, and awareness. It convenes the annual Symposium on Electronic Crime Research (eCrime) and operates the eCrime eXchange.",
+      "website": "https://apwg.org",
+      "logo_url": null,
+      "country": "US",
+      "parent_institution": null,
+      "department": null,
+      "points_of_contact": [
+        {
+          "name": "APWG Membership",
+          "title": "Membership inquiries for eCrime eXchange",
+          "role": "primary",
+          "email": "membership@apwg.org",
+          "profile_url": "https://apwg.org/ecx"
+        },
+        {
+          "name": "APWG Accounts",
+          "title": "Account information published on the eCX page",
+          "role": "technical",
+          "email": "accounts@apwg.org",
+          "profile_url": "https://apwg.org/ecx"
+        }
+      ],
+      "capabilities": [
+        {
+          "capability_id": "cap-apwg-ecx",
+          "name": "eCrime eXchange (eCX)",
+          "capability_type": "platform",
+          "summary": "Member clearinghouse for cybercrime event data, with a REST API and a web interface.",
+          "description": "APWG describes eCrime eXchange as a clearinghouse for cybercrime event data, operating since 2004. The provider states that members contribute and retrieve phishing URLs, phishing email content, malicious IP addresses, maliciously registered domain names, cryptocurrency wallet addresses, and malicious SMS or text-message metadata. The same page says eCX offers a RESTful API and a web UI, that records carry confidence scores and provenance, and that the exchange is agreement-based rather than a public open feed.",
+          "threat_categories": ["phishing", "credential_theft", "brand_impersonation", "financial_fraud", "malicious_infrastructure"],
+          "keywords": ["eCX", "eCrime eXchange", "phishing URLs", "clearinghouse", "APWG"],
+          "data_characteristics": {
+            "data_types": ["url", "email", "ip", "domain", "cryptocurrency_address", "sms"],
+            "formats": [],
+            "update_frequency": "continuous",
+            "geographic_coverage": ["global"],
+            "temporal_coverage": "2004-present"
+          },
+          "interface": {
+            "delivery_methods": ["api", "web_portal"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "operational",
+            "access_level": "request_only",
+            "request_url": "https://apwg.org/ecx",
+            "authentication": "APWG member account",
+            "license": null,
+            "usage_restrictions": [
+              "The provider states that eCX is available to APWG members and is governed by its data-sharing agreement.",
+              "The provider states that the exchange is not a public open feed."
+            ],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "Practical API Integration: Connecting Applications to the eCrimex eXchange Data Clearinghouse",
+              "authors": ["Carlos Ramirez"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "presented_at_ecrime"
+            },
+            {
+              "title": "APWG eCrime eXchange Preview & Update",
+              "authors": ["Carlos Ramirez"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "presented_at_ecrime"
+            },
+            {
+              "title": "PhishFarm: A Scalable Framework for Measuring the Effectiveness of Evasion Techniques Against Browser Phishing Blacklists",
+              "authors": ["Adam Oest", "Yeganeh Safaei", "Adam Doupé", "Gail-Joon Ahn", "Brad Wardman", "Kevin Tyers"],
+              "year": 2019,
+              "venue": "IEEE Symposium on Security and Privacy",
+              "doi": null,
+              "url": "https://docs.apwg.org/documents/phishfarm_ieee_sp_2019_oest.pdf",
+              "relationship": "cites_data"
+            }
+          ],
+          "references": {
+            "project_url": "https://apwg.org/ecx",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://apwg.org/ecx",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "org-spamhaus",
+      "name": "The Spamhaus Project",
+      "entity_type": "nonprofit",
+      "description": "The Spamhaus Project describes itself as a nonprofit that publishes signal and intelligence about Internet identifiers, including DNS blocklists used to filter email. It is registered in Andorra. Spamhaus Technology is a separate licensee of abuse.ch data; the abuse.ch platforms are catalogued under their own record.",
+      "website": "https://www.spamhaus.org/",
+      "logo_url": null,
+      "country": "AD",
+      "parent_institution": null,
+      "department": null,
+      "points_of_contact": [
+        {
+          "name": "The Spamhaus Project",
+          "title": "General inquiries",
+          "role": "primary",
+          "email": null,
+          "profile_url": "https://www.spamhaus.org/faqs/organization/"
+        }
+      ],
+      "capabilities": [
+        {
+          "capability_id": "cap-spamhaus-dnsbl",
+          "name": "Spamhaus DNS Blocklists",
+          "capability_type": "intelligence_feed",
+          "summary": "DNS blocklists of IPs and domains associated with spam, phishing, malware, and policy violations.",
+          "description": "Spamhaus publishes DNS blocklists for mail filtering. Its blocklist page names the Spamhaus Blocklist (SBL), Exploits Blocklist (XBL), Policy Blocklist (PBL), Domain Blocklist (DBL), and Combined Spam Sources (CSS). Queries are made from mail servers and filtering tools. The provider says a public query service still exists but is being deprecated, and that Spamhaus Technology offers a free service with published usage criteria.",
+          "threat_categories": ["phishing", "malware", "malicious_infrastructure"],
+          "keywords": ["DNSBL", "SBL", "XBL", "PBL", "DBL", "CSS", "spam", "email filtering"],
+          "data_characteristics": {
+            "data_types": ["ip", "domain"],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["software"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "operational",
+            "access_level": "public",
+            "request_url": "https://www.spamhaus.org/blocklists/",
+            "authentication": "DNS query; see provider usage criteria",
+            "license": null,
+            "usage_restrictions": [
+              "The provider states that the public DNSBL query service is subject to a fair-use policy and is being deprecated.",
+              "Current access terms are the provider's DNSBL usage criteria, which were not copied into this record."
+            ],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [],
+          "references": {
+            "project_url": "https://www.spamhaus.org/blocklists/",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": null
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://www.spamhaus.org/blocklists/",
+            "last_verified_at": "2026-11-04"
+          }
+        },
+        {
+          "capability_id": "cap-spamhaus-domain-clustering",
+          "name": "Phishing campaign domain clustering",
+          "capability_type": "research_model",
+          "summary": "eCrime 2026 training on investigating phishing campaigns by clustering domains.",
+          "description": "The APWG eCrime 2026 program lists a training session, Amplify the Signal: Investigating phishing campaigns through domain clustering, presented by Sven Krohlas and affiliated with Spamhaus-abuse.ch. This record does not confirm a software release, dataset, or access method for that work.",
+          "threat_categories": ["phishing", "malicious_infrastructure"],
+          "keywords": ["domain clustering", "phishing campaigns", "eCrime 2026", "Sven Krohlas"],
+          "data_characteristics": {
+            "data_types": [],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": [],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "unverified",
+            "access_level": "unknown",
+            "request_url": null,
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "Amplify the Signal: Investigating phishing campaigns through domain clustering",
+              "authors": ["Sven Krohlas"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "describes_capability"
+            }
+          ],
+          "references": {
+            "project_url": null,
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "unverified",
+            "sharing_confirmed": false,
+            "claimed_by_provider": false,
+            "source_url": "https://www.apwg.org/events/ecrime2026",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "org-abuse-ch",
+      "name": "abuse.ch",
+      "entity_type": "community",
+      "description": "abuse.ch is an independent, community-driven malware and botnet intelligence project. Its site says the platforms are free and operated together with Spamhaus. A project post states that on 1 August 2022 Spamhaus Technology became the primary licensee of data produced by abuse.ch.",
+      "website": "https://www.abuse.ch/",
+      "logo_url": null,
+      "country": null,
+      "parent_institution": null,
+      "department": null,
+      "points_of_contact": [],
+      "capabilities": [
+        {
+          "capability_id": "cap-abuse-urlhaus",
+          "name": "URLhaus",
+          "capability_type": "intelligence_feed",
+          "summary": "Community exchange of URLs used to distribute malware.",
+          "description": "URLhaus is a platform from abuse.ch and Spamhaus for sharing malicious URLs used in malware distribution. The project page invites people to browse the database, report URLs, and use an API for bulk queries. Current account and reuse terms are published by the operator and were not copied here.",
+          "threat_categories": ["malware", "malicious_infrastructure"],
+          "keywords": ["URLhaus", "malware URLs", "malware distribution"],
+          "data_characteristics": {
+            "data_types": ["url"],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["web_portal", "api"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "operational",
+            "access_level": "public",
+            "request_url": "https://urlhaus.abuse.ch/",
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [
+              "The operator describes the platform as a community exchange. Current API and account terms were not independently copied into this record."
+            ],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [],
+          "references": {
+            "project_url": "https://urlhaus.abuse.ch/",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": null
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://urlhaus.abuse.ch/",
+            "last_verified_at": "2026-11-04"
+          }
+        },
+        {
+          "capability_id": "cap-abuse-bazaar",
+          "name": "MalwareBazaar",
+          "capability_type": "dataset",
+          "summary": "Community collection of malware samples for research and detection.",
+          "description": "MalwareBazaar is a platform from abuse.ch and Spamhaus for sharing malware samples with the security community, antivirus vendors, and threat-intelligence providers. The project page describes browsing the collection, uploading samples, alerts, and an API.",
+          "threat_categories": ["malware"],
+          "keywords": ["MalwareBazaar", "malware samples", "sample exchange"],
+          "data_characteristics": {
+            "data_types": ["malware_sample"],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["web_portal", "api", "download"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "operational",
+            "access_level": "public",
+            "request_url": "https://bazaar.abuse.ch/",
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [
+              "Samples are malicious software. The operator's current sharing and API terms were not copied into this record."
+            ],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [],
+          "references": {
+            "project_url": "https://bazaar.abuse.ch/",
+            "repository_url": null,
+            "dataset_url": "https://bazaar.abuse.ch/",
+            "presentation_url": null
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://bazaar.abuse.ch/",
+            "last_verified_at": "2026-11-04"
+          }
+        },
+        {
+          "capability_id": "cap-abuse-threatfox",
+          "name": "ThreatFox",
+          "capability_type": "intelligence_feed",
+          "summary": "Community exchange of malware indicators of compromise.",
+          "description": "ThreatFox is a platform from abuse.ch and Spamhaus for sharing indicators of compromise associated with malware. The project page describes browsing indicators, contributing indicators, and an API.",
+          "threat_categories": ["malware", "malicious_infrastructure"],
+          "keywords": ["ThreatFox", "IOC", "indicators of compromise"],
+          "data_characteristics": {
+            "data_types": ["indicator"],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["web_portal", "api"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "operational",
+            "access_level": "public",
+            "request_url": "https://threatfox.abuse.ch/",
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [
+              "The operator's current API and account terms were not copied into this record."
+            ],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [],
+          "references": {
+            "project_url": "https://threatfox.abuse.ch/",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": null
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://threatfox.abuse.ch/",
+            "last_verified_at": "2026-11-04"
+          }
+        },
+        {
+          "capability_id": "cap-abuse-yaraify",
+          "name": "YARAify",
+          "capability_type": "detection_service",
+          "summary": "Scan files against a community repository of YARA rules.",
+          "description": "YARAify is a platform from abuse.ch and Spamhaus for scanning suspicious files and process dumps against a large repository of YARA rules. The project page also describes alerts, an API, and sharing rules through YARAhub. The YARAhub address was not copied because it was not captured as a stable URL in the source reviewed for this record.",
+          "threat_categories": ["malware"],
+          "keywords": ["YARAify", "YARA", "malware scanning"],
+          "data_characteristics": {
+            "data_types": ["file", "yara_rule"],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["web_portal", "api"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "operational",
+            "access_level": "public",
+            "request_url": "https://yaraify.abuse.ch/",
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [
+              "The operator's current API and account terms were not copied into this record."
+            ],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [],
+          "references": {
+            "project_url": "https://yaraify.abuse.ch/",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": null
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://yaraify.abuse.ch/",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "org-shadowserver",
+      "name": "The Shadowserver Foundation",
+      "entity_type": "nonprofit",
+      "description": "The Shadowserver Foundation says it provides timely Internet security data at no charge, including daily remediation reports for network owners and national response teams, plus support for investigations.",
+      "website": "https://www.shadowserver.org/",
+      "logo_url": null,
+      "country": null,
+      "parent_institution": null,
+      "department": null,
+      "points_of_contact": [],
+      "capabilities": [
+        {
+          "capability_id": "cap-shadowserver-reporting",
+          "name": "Shadowserver network reporting",
+          "capability_type": "intelligence_feed",
+          "summary": "Free daily remediation reports for vetted network owners and response teams.",
+          "description": "Shadowserver states that it sends daily custom remediation reports to more than 10,000 vetted subscribers, including national CSIRTs, and that an API is available after requesting a key. The provider says the underlying observations come from Internet-wide scans, sinkholes, honeypot sensors, sandboxes, and blocklists. It also says API helper scripts and a report manager are published on its GitHub page; that repository URL was not copied into this record.",
+          "threat_categories": ["malware", "malicious_infrastructure"],
+          "keywords": ["remediation reports", "CSIRT", "sinkhole", "daily reports", "Shadowserver"],
+          "data_characteristics": {
+            "data_types": ["report", "ip", "malware"],
+            "formats": ["application/json"],
+            "update_frequency": "daily",
+            "geographic_coverage": ["global"],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["api", "on_request"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "operational",
+            "access_level": "request_only",
+            "request_url": "https://www.shadowserver.org/what-we-do/network-reporting/",
+            "authentication": "API key issued on request",
+            "license": null,
+            "usage_restrictions": [
+              "The provider states that reports are free for vetted subscribers and are meant for the recipient's remediation and defense."
+            ],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "Why Is Law Enforcement Being Dominated by Sub-domains?",
+              "authors": ["Benedict Addis"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "presented_at_ecrime"
+            }
+          ],
+          "references": {
+            "project_url": "https://www.shadowserver.org/what-we-do/network-reporting/",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://www.shadowserver.org/what-we-do/network-reporting/",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "org-chongluadao",
+      "name": "ChongLuaDao",
+      "entity_type": "community",
+      "description": "ChongLuaDao (Chống Lừa Đảo) is a Vietnam-based social enterprise focused on protecting people from online fraud and phishing. Its about page says it offers free community tools to check suspicious content, report harmful sites, and receive alerts. The legal entity named on that page is ChongLuaDao Social Enterprise Company Limited, directed by Ngô Minh Hiếu (also known there as Hieu Ngo and Hieu PC).",
+      "website": "https://chongluadao.vn/",
+      "logo_url": null,
+      "country": "VN",
+      "parent_institution": null,
+      "department": null,
+      "points_of_contact": [
+        {
+          "name": "ChongLuaDao",
+          "title": "Published organizational contact",
+          "role": "primary",
+          "email": "info@chongluadao.vn",
+          "profile_url": "https://chongluadao.vn/en/about"
+        }
+      ],
+      "capabilities": [
+        {
+          "capability_id": "cap-cld-scam-detection",
+          "name": "Scam website detection",
+          "capability_type": "detection_service",
+          "summary": "Free browser-based warnings for scam and phishing sites aimed at Vietnamese users.",
+          "description": "ChongLuaDao's about page says a browser extension released in 2021 warns users about scam websites, combining crowdsourced reports, expert review, and machine learning. The page also says the project has contributed data to APWG since 2021. A specific extension-store listing was not copied into this record.",
+          "threat_categories": ["phishing", "scam", "financial_fraud"],
+          "keywords": ["browser extension", "Vietnam", "scam detection", "Chống Lừa Đảo"],
+          "data_characteristics": {
+            "data_types": ["url"],
+            "formats": [],
+            "update_frequency": "real_time",
+            "geographic_coverage": ["VN"],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["software"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "operational",
+            "access_level": "public",
+            "request_url": "https://chongluadao.vn/en/about",
+            "authentication": "none described",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [],
+          "references": {
+            "project_url": "https://chongluadao.vn/en/about",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": null
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://chongluadao.vn/en/about",
+            "last_verified_at": "2026-11-04"
+          }
+        },
+        {
+          "capability_id": "cap-cld-threat-lookup",
+          "name": "Threat lookup",
+          "capability_type": "detection_service",
+          "summary": "Public lookup for suspicious links, messages, and images.",
+          "description": "ChongLuaDao's about page says that in 2022 it introduced an online threat lookup tool and a Telegram chatbot so people can check suspicious links, messages, and images. This record does not publish a separate tool URL because the about page did not state one.",
+          "threat_categories": ["phishing", "scam", "social_engineering"],
+          "keywords": ["lookup", "chatbot", "Telegram", "image check"],
+          "data_characteristics": {
+            "data_types": ["url", "message", "image"],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": ["VN"],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["web_portal"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "operational",
+            "access_level": "public",
+            "request_url": "https://chongluadao.vn/en/about",
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [],
+          "references": {
+            "project_url": "https://chongluadao.vn/en/about",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": null
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://chongluadao.vn/en/about",
+            "last_verified_at": "2026-11-04"
+          }
+        },
+        {
+          "capability_id": "cap-cld-indicator-exchange",
+          "name": "Scam-camp indicator exchange model",
+          "capability_type": "research_model",
+          "summary": "eCrime 2026 session on an indicator exchange for earlier intervention.",
+          "description": "The APWG eCrime 2026 program lists Scam Camps Signal Before They Scale: Building an Indicator Exchange Model for Preemptive Intervention, presented by Hieu Minh Ngo and Quynh Nhu Nguyen of ChongLuaDao. The program marks the session as a video presentation. This record does not confirm that an indicator exchange is available for outside use.",
+          "threat_categories": ["scam", "financial_fraud", "social_engineering"],
+          "keywords": ["indicator exchange", "scam camps", "eCrime 2026", "ChongLuaDao"],
+          "data_characteristics": {
+            "data_types": [],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": [],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "unverified",
+            "access_level": "unknown",
+            "request_url": null,
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "Scam Camps Signal Before They Scale: Building an Indicator Exchange Model for Preemptive Intervention",
+              "authors": ["Hieu Minh Ngo", "Quynh Nhu Nguyen"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "describes_capability"
+            }
+          ],
+          "references": {
+            "project_url": null,
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "unverified",
+            "sharing_confirmed": false,
+            "claimed_by_provider": false,
+            "source_url": "https://www.apwg.org/events/ecrime2026",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "org-gse",
+      "name": "Global Signal Exchange",
+      "entity_type": "nonprofit",
+      "description": "The Global Signal Exchange (GSE) describes itself as a UK nonprofit collaboration, powered with Oxford Information Labs, for sharing scam and fraud signals among trusted organizations. Its about page names Emily Taylor, Lucien Taylor, and Mark Robertshaw as co-founders and says participants can share data bilaterally, anonymously, or in aggregated form.",
+      "website": "https://www.globalsignalexchange.org/",
+      "logo_url": null,
+      "country": "GB",
+      "parent_institution": null,
+      "department": null,
+      "points_of_contact": [
+        {
+          "name": "Global Signal Exchange",
+          "title": "Public website",
+          "role": "primary",
+          "email": null,
+          "profile_url": "https://www.globalsignalexchange.org/about"
+        }
+      ],
+      "capabilities": [
+        {
+          "capability_id": "cap-gse-platform",
+          "name": "Global Signal Exchange platform",
+          "capability_type": "platform",
+          "summary": "Trusted exchange for scam and fraud signals, including API access for participants.",
+          "description": "GSE describes a platform where trusted parties share abuse and fraud signals. Public feature descriptions include private sharing groups, API access for participants, and access to threat-intelligence feeds available to those participants. Who may join, and under what agreement, is not restated here.",
+          "threat_categories": ["scam", "financial_fraud", "phishing", "brand_impersonation"],
+          "keywords": ["GSE", "signal exchange", "scam", "fraud intelligence"],
+          "data_characteristics": {
+            "data_types": ["threat_signal"],
+            "formats": [],
+            "update_frequency": "real_time",
+            "geographic_coverage": ["global"],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["web_portal", "api"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "operational",
+            "access_level": "restricted",
+            "request_url": "https://www.globalsignalexchange.org/",
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [
+              "The provider describes participation as limited to trusted parties."
+            ],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [],
+          "references": {
+            "project_url": "https://www.globalsignalexchange.org/",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": null
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://www.globalsignalexchange.org/about",
+            "last_verified_at": "2026-11-04"
+          }
+        },
+        {
+          "capability_id": "cap-gse-compass",
+          "name": "GSE Compass",
+          "capability_type": "analysis_tool",
+          "summary": "Provider tool for charts, reports, and threat-intelligence insights on GSE data.",
+          "description": "The GSE website describes Compass as its tool for producing threat-intelligence insights, charts, and reports. This record does not restate third-party descriptions of how queries are written. Access follows participation in the exchange, which this registry has not reconfirmed.",
+          "threat_categories": ["scam", "financial_fraud", "phishing"],
+          "keywords": ["Compass", "GSE", "analytics"],
+          "data_characteristics": {
+            "data_types": ["threat_signal"],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": ["global"],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["web_portal"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "operational",
+            "access_level": "restricted",
+            "request_url": "https://www.globalsignalexchange.org/",
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [
+              "Described by the provider as part of the trusted exchange."
+            ],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [],
+          "references": {
+            "project_url": "https://www.globalsignalexchange.org/",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": null
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://www.globalsignalexchange.org/",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "org-oxil",
+      "name": "Oxford Information Labs",
+      "entity_type": "commercial",
+      "description": "Oxford Information Labs (OXIL) describes itself as a cyber-intelligence consultancy working on security, resilience, and Internet-governance policy. Its site says OXIL Research is the nonprofit research arm. OXIL is also a founder of the Global Signal Exchange, which is catalogued separately.",
+      "website": "https://www.oxil.uk/",
+      "logo_url": null,
+      "country": "GB",
+      "parent_institution": null,
+      "department": "OXIL Research",
+      "points_of_contact": [],
+      "capabilities": [
+        {
+          "capability_id": "cap-oxil-scam-prevention",
+          "name": "Rethinking Scam Prevention",
+          "capability_type": "research_model",
+          "summary": "Two-year research project on who scams target and how safeguarding might respond.",
+          "description": "OXIL lists Rethinking Scam Prevention as an active 2026–2027 project. The project page says it studies how scams target adult populations, using the lab's figure of AI-driven analysis of 70 million threat signals, and aims at a safeguarding approach. Alice Taylor is listed to present related work at APWG eCrime 2026. This record does not confirm a dataset or service that outside parties can query.",
+          "threat_categories": ["scam", "financial_fraud", "social_engineering"],
+          "keywords": ["scam prevention", "safeguarding", "OXIL", "Alice Taylor"],
+          "data_characteristics": {
+            "data_types": ["threat_signal"],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": "2026-2027"
+          },
+          "interface": {
+            "delivery_methods": [],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "unverified",
+            "access_level": "unknown",
+            "request_url": "https://www.oxil.uk/",
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "Rethinking Scam Prevention: Safeguarding Adults Against Scams and Fraud",
+              "authors": ["Alice Taylor"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "describes_capability"
+            }
+          ],
+          "references": {
+            "project_url": "https://www.oxil.uk/",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://www.oxil.uk/",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "org-bforeai",
+      "name": "BforeAI",
+      "entity_type": "commercial",
+      "description": "BforeAI, also presented on its public site as Bfore, describes PreCrime as a commercial predictive-security platform. The eCrime 2026 program lists a PreCrime Labs at BforeAI case study. Performance figures on the marketing site were not independently checked.",
+      "website": "https://www.bfore.ai/",
+      "logo_url": null,
+      "country": null,
+      "parent_institution": null,
+      "department": "PreCrime Labs",
+      "points_of_contact": [],
+      "capabilities": [
+        {
+          "capability_id": "cap-bfore-precrime",
+          "name": "PreCrime",
+          "capability_type": "platform",
+          "summary": "Commercial platform the provider says identifies malicious infrastructure before campaigns go live.",
+          "description": "BforeAI's website describes PreCrime as a platform that looks for malicious infrastructure, phishing, impersonation, and related preparations before a campaign is active. The eCrime 2026 program lists Abu Bakr Qureshi, PreCrime Labs at BforeAI, on a case study of domain abuse around a large event. This registry has not confirmed an API, a trial process, or the provider's performance claims.",
+          "threat_categories": ["phishing", "brand_impersonation", "malicious_infrastructure", "ransomware", "scam"],
+          "keywords": ["PreCrime", "predictive", "domain abuse", "BforeAI"],
+          "data_characteristics": {
+            "data_types": ["domain", "infrastructure_signal"],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": ["global"],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["web_portal"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "operational",
+            "access_level": "unknown",
+            "request_url": "https://www.bfore.ai/",
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [
+              "Commercial offering. A public request process and contract terms were not copied into this record."
+            ],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "Prediction at Scale, Confirmation at the Margin: A Case Study in Mega-Event Domain Abuse",
+              "authors": ["Abu Bakr Qureshi"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "presented_at_ecrime"
+            }
+          ],
+          "references": {
+            "project_url": "https://www.bfore.ai/",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://www.bfore.ai/",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "org-interisle",
+      "name": "Interisle Consulting Group",
+      "entity_type": "commercial",
+      "description": "Interisle Consulting Group publishes measurement studies of phishing, malware, spam, and the domain-name resources used in those attacks. Dave Piscitello and Greg Aaron are listed to present Cybercrime Supply Chain 2026 at APWG eCrime 2026.",
+      "website": "https://interisle.net/",
+      "logo_url": null,
+      "country": null,
+      "parent_institution": null,
+      "department": null,
+      "points_of_contact": [],
+      "capabilities": [
+        {
+          "capability_id": "cap-interisle-supply-chain",
+          "name": "Cybercrime Supply Chain studies",
+          "capability_type": "research_model",
+          "summary": "Annual public measurements of resources used in malware, phishing, and spam.",
+          "description": "Interisle's site describes Cybercrime Supply Chain 2026 as a study of where criminals obtain attack resources, following earlier editions in the same series. The homepage summary discusses malware, phishing, and spam events and bulk domain registration. A direct report file was not identified for this record, so the link is the organization homepage. Raw event data is not described as a public download.",
+          "threat_categories": ["phishing", "malware", "malicious_infrastructure"],
+          "keywords": ["cybercrime supply chain", "domain registration", "measurement", "Interisle"],
+          "data_characteristics": {
+            "data_types": ["measurement_report"],
+            "formats": [],
+            "update_frequency": "annual",
+            "geographic_coverage": ["global"],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["web_portal"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "published",
+            "access_level": "public",
+            "request_url": "https://interisle.net/",
+            "authentication": "none described",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "Cybercrime Supply Chain 2026: Measurements and Assessments of Cyber Attack Resources and Where Criminals Acquire Them",
+              "authors": ["Interisle Consulting Group"],
+              "year": 2026,
+              "venue": "Interisle Consulting Group",
+              "doi": null,
+              "url": "https://interisle.net/",
+              "relationship": "describes_capability"
+            },
+            {
+              "title": "Cybercrime Supply Chain 2026",
+              "authors": ["Dave Piscitello", "Greg Aaron"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "presented_at_ecrime"
+            }
+          ],
+          "references": {
+            "project_url": "https://interisle.net/",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://interisle.net/",
+            "last_verified_at": "2026-11-04"
+          }
+        },
+        {
+          "capability_id": "cap-interisle-phishing-landscape",
+          "name": "Phishing Landscape",
+          "capability_type": "research_model",
+          "summary": "Annual public study of where phishing is hosted and which resources it uses.",
+          "description": "Interisle's homepage describes Phishing Landscape 2025 as its fifth annual study of the scope and distribution of phishing. Individual authors and a direct report file were not identified on the page reviewed for this record.",
+          "threat_categories": ["phishing", "brand_impersonation", "malicious_infrastructure"],
+          "keywords": ["phishing landscape", "TLD", "measurement", "Interisle"],
+          "data_characteristics": {
+            "data_types": ["measurement_report"],
+            "formats": [],
+            "update_frequency": "annual",
+            "geographic_coverage": ["global"],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["web_portal"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "published",
+            "access_level": "public",
+            "request_url": "https://interisle.net/",
+            "authentication": "none described",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "Phishing Landscape 2025: An Annual Study of the Scope and Distribution of Phishing",
+              "authors": ["Interisle Consulting Group"],
+              "year": 2025,
+              "venue": "Interisle Consulting Group",
+              "doi": null,
+              "url": "https://interisle.net/",
+              "relationship": "describes_capability"
+            }
+          ],
+          "references": {
+            "project_url": "https://interisle.net/",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": null
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://interisle.net/",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "org-isecom",
+      "name": "ISECOM",
+      "entity_type": "nonprofit",
+      "description": "ISECOM, the Institute for Security and Open Methodologies, describes itself as an open security-research institute established in 2001, with roots in Barcelona and New York. It publishes the OSSTMM and the Hacker Highschool education project. Pete Herzog is listed at eCrime 2026 for a threat-modeling training and an OSSTMM session.",
+      "website": "https://www.isecom.org/",
+      "logo_url": null,
+      "country": null,
+      "parent_institution": null,
+      "department": null,
+      "points_of_contact": [],
+      "capabilities": [
+        {
+          "capability_id": "cap-isecom-osstmm",
+          "name": "OSSTMM",
+          "capability_type": "other",
+          "summary": "Open methodology for operational security testing, analysis, and trust measurement.",
+          "description": "ISECOM describes the Open Source Security Testing Methodology Manual (OSSTMM) as its public security-testing methodology, with materials available for download and further resources offered through membership. This record treats it as a published method, not as a hosted detection service or data feed. License terms were not copied from the manual.",
+          "threat_categories": ["other"],
+          "keywords": ["OSSTMM", "security testing", "methodology", "ISECOM", "Pete Herzog"],
+          "data_characteristics": {
+            "data_types": ["methodology"],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["download"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "published",
+            "access_level": "public",
+            "request_url": "https://www.isecom.org/",
+            "authentication": "none described",
+            "license": null,
+            "usage_restrictions": [
+              "The provider offers public OSSTMM materials and additional resources through membership."
+            ],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "OSSTMM, Mr. Crimebot and Me: Assessing the AAMs That Assess Our Cybercrime Resilience",
+              "authors": ["Pete Herzog"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "presented_at_ecrime"
+            }
+          ],
+          "references": {
+            "project_url": "https://www.isecom.org/",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://www.isecom.org/",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "org-operation-shamrock",
+      "name": "Operation Shamrock",
+      "entity_type": "nonprofit",
+      "description": "Operation Shamrock is a nonprofit founded by Erin West. Its public materials describe a mission to educate, mobilize, and disrupt transnational scam operations, with emphasis on cryptocurrency investment fraud. A public statement by the founder describes the organization as a 501(c)(3).",
+      "website": "https://www.operationshamrock.org/",
+      "logo_url": null,
+      "country": "US",
+      "parent_institution": null,
+      "department": null,
+      "points_of_contact": [
+        {
+          "name": "Erin West",
+          "title": "Founder",
+          "role": "primary",
+          "email": null,
+          "profile_url": "https://www.operationshamrock.org/about/erin"
+        }
+      ],
+      "capabilities": [
+        {
+          "capability_id": "cap-shamrock-coalition",
+          "name": "Scam disruption coalition",
+          "capability_type": "other",
+          "summary": "Cross-sector education and disruption work on cryptocurrency investment scams.",
+          "description": "Operation Shamrock publicly describes education, mobilization of law enforcement and industry, and disruption of transnational scam operations. A March 2026 public statement by the founder also describes training for financial institutions and a victim-triage partnership with TRM Labs. This registry has not verified a machine-readable feed, an API, or a data-sharing agreement. Erin West is listed on the eCrime 2026 program for a video presentation on this disruption work.",
+          "threat_categories": ["scam", "financial_fraud", "social_engineering"],
+          "keywords": ["pig butchering", "cryptocurrency", "Operation Shamrock", "Erin West"],
+          "data_characteristics": {
+            "data_types": [],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["web_portal"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "operational",
+            "access_level": "unknown",
+            "request_url": "https://www.operationshamrock.org/",
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "West on Pigbutchering Disruption",
+              "authors": ["Erin West"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "presented_at_ecrime"
+            }
+          ],
+          "references": {
+            "project_url": "https://www.operationshamrock.org/",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://www.operationshamrock.org/",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "org-concordia",
+      "name": "Concordia University",
+      "entity_type": "academic",
+      "description": "Concordia University is listed on the APWG eCrime 2026 program through Mohammad Mannan, alongside Ridwan Arefin Islam of McGill University, for a research session on phishing websites. This record does not claim a university-operated service.",
+      "website": "https://www.concordia.ca/",
+      "logo_url": null,
+      "country": "CA",
+      "parent_institution": null,
+      "department": null,
+      "points_of_contact": [],
+      "capabilities": [
+        {
+          "capability_id": "cap-concordia-phishtrace",
+          "name": "PhishTrace",
+          "capability_type": "research_model",
+          "summary": "eCrime 2026 research session on characterizing phishing sites from dynamic features.",
+          "description": "The APWG eCrime 2026 program lists PhishTrace: Characterizing Phishing Websites from Dynamic Features, with Ridwan Arefin Islam (McGill University) and Mohammad Mannan (Concordia University). No software release, dataset, or access method was identified for this record.",
+          "threat_categories": ["phishing"],
+          "keywords": ["PhishTrace", "dynamic features", "McGill", "Concordia"],
+          "data_characteristics": {
+            "data_types": [],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": [],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "unverified",
+            "access_level": "unknown",
+            "request_url": null,
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "PhishTrace: Characterizing Phishing Websites from Dynamic Features",
+              "authors": ["Ridwan Arefin Islam", "Mohammad Mannan"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "describes_capability"
+            }
+          ],
+          "references": {
+            "project_url": null,
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "unverified",
+            "sharing_confirmed": false,
+            "claimed_by_provider": false,
+            "source_url": "https://www.apwg.org/events/ecrime2026",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "org-umd",
+      "name": "University of Maryland",
+      "entity_type": "academic",
+      "description": "The University of Maryland is listed on the APWG eCrime 2026 program for two research sessions by Kyungchan Lim, on phishing-domain survival and on blocklist-based anti-phishing services. This record does not claim a university-operated feed.",
+      "website": "https://www.umd.edu/",
+      "logo_url": null,
+      "country": "US",
+      "parent_institution": null,
+      "department": null,
+      "points_of_contact": [],
+      "capabilities": [
+        {
+          "capability_id": "cap-umd-domain-survival",
+          "name": "Phishing domain survival study",
+          "capability_type": "research_model",
+          "summary": "eCrime 2026 research session on registration and DNS choices that affect how long phishing domains stay up.",
+          "description": "The APWG eCrime 2026 program lists Built to Last? Registration and DNS Strategies in Phishing Domain Survival, presented by Kyungchan Lim of the University of Maryland. No dataset or tool release was identified for this record.",
+          "threat_categories": ["phishing", "malicious_infrastructure"],
+          "keywords": ["domain survival", "DNS", "registration", "Kyungchan Lim"],
+          "data_characteristics": {
+            "data_types": [],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": [],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "unverified",
+            "access_level": "unknown",
+            "request_url": null,
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "Built to Last? Registration and DNS Strategies in Phishing Domain Survival",
+              "authors": ["Kyungchan Lim"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "describes_capability"
+            }
+          ],
+          "references": {
+            "project_url": null,
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "unverified",
+            "sharing_confirmed": false,
+            "claimed_by_provider": false,
+            "source_url": "https://www.apwg.org/events/ecrime2026",
+            "last_verified_at": "2026-11-04"
+          }
+        },
+        {
+          "capability_id": "cap-umd-blocklist-study",
+          "name": "Blocklist anti-phishing study",
+          "capability_type": "research_model",
+          "summary": "eCrime 2026 research session on how blocklist-based anti-phishing services behave in practice.",
+          "description": "The APWG eCrime 2026 program lists Understanding the Security Impact of Blocklist-based Anti-phishing Intelligence Services in Practice, presented by Kyungchan Lim of the University of Maryland. No dataset or service offering was identified for this record.",
+          "threat_categories": ["phishing"],
+          "keywords": ["blocklist", "anti-phishing", "measurement", "Kyungchan Lim"],
+          "data_characteristics": {
+            "data_types": [],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": [],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "unverified",
+            "access_level": "unknown",
+            "request_url": null,
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "Understanding the Security Impact of Blocklist-based Anti-phishing Intelligence Services in Practice",
+              "authors": ["Kyungchan Lim"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "describes_capability"
+            }
+          ],
+          "references": {
+            "project_url": null,
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "unverified",
+            "sharing_confirmed": false,
+            "claimed_by_provider": false,
+            "source_url": "https://www.apwg.org/events/ecrime2026",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "org-vicomtech",
+      "name": "Vicomtech",
+      "entity_type": "academic",
+      "description": "Vicomtech is listed on the APWG eCrime 2026 program for a research session by Unai Agirre on phishing-template and attacker attribution. This record does not claim an operational product.",
+      "website": "https://www.vicomtech.org/",
+      "logo_url": null,
+      "country": "ES",
+      "parent_institution": null,
+      "department": null,
+      "points_of_contact": [],
+      "capabilities": [
+        {
+          "capability_id": "cap-vicomtech-attribution",
+          "name": "Phishing template attribution",
+          "capability_type": "research_model",
+          "summary": "eCrime 2026 research session on a tree-structured approach to phishing templates and attacker attribution.",
+          "description": "The APWG eCrime 2026 program lists A Tree-Structured Approach for Phishing Template and Attacker Attribution Analysis, presented by Unai Agirre of Vicomtech. No tool release or data-access method was identified for this record.",
+          "threat_categories": ["phishing"],
+          "keywords": ["phishing templates", "attribution", "Vicomtech", "Unai Agirre"],
+          "data_characteristics": {
+            "data_types": [],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": [],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "unverified",
+            "access_level": "unknown",
+            "request_url": null,
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "A Tree-Structured Approach for Phishing Template and Attacker Attribution Analysis",
+              "authors": ["Unai Agirre"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "describes_capability"
+            }
+          ],
+          "references": {
+            "project_url": null,
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "unverified",
+            "sharing_confirmed": false,
+            "claimed_by_provider": false,
+            "source_url": "https://www.apwg.org/events/ecrime2026",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "org-mpi-sp",
+      "name": "Max Planck Institute for Security and Privacy",
+      "entity_type": "academic",
+      "description": "The Max Planck Institute for Security and Privacy is listed on the APWG eCrime 2026 program for a research session by Megha Sundriyal on an underground fraud ecosystem. This record does not claim a shared dataset or service.",
+      "website": "https://www.mpi-sp.org/",
+      "logo_url": null,
+      "country": "DE",
+      "parent_institution": "Max Planck Society",
+      "department": null,
+      "points_of_contact": [],
+      "capabilities": [
+        {
+          "capability_id": "cap-mpi-dread-ecosystem",
+          "name": "Underground fraud ecosystem study",
+          "capability_type": "research_model",
+          "summary": "eCrime 2026 research session analyzing a fraud ecosystem on the Dread forum.",
+          "description": "The APWG eCrime 2026 program lists All the Pieces Matter! A Six-stage Analysis of an Underground Fraud Ecosystem on Dread, presented by Megha Sundriyal of the Max Planck Institute for Security and Privacy. No dataset or access method was identified for this record.",
+          "threat_categories": ["financial_fraud", "dark_web"],
+          "keywords": ["Dread", "fraud ecosystem", "MPI-SP", "Megha Sundriyal"],
+          "data_characteristics": {
+            "data_types": [],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": [],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "unverified",
+            "access_level": "unknown",
+            "request_url": null,
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "All the Pieces Matter! A Six-stage Analysis of an Underground Fraud Ecosystem on Dread",
+              "authors": ["Megha Sundriyal"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "describes_capability"
+            }
+          ],
+          "references": {
+            "project_url": null,
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "unverified",
+            "sharing_confirmed": false,
+            "claimed_by_provider": false,
+            "source_url": "https://www.apwg.org/events/ecrime2026",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "org-uncw",
+      "name": "University of North Carolina Wilmington (UNCW)",
+      "entity_type": "academic",
+      "description": "The University of North Carolina Wilmington is connected to the APWG eCrime 2026 paper The Promise of Strategic Agentic Scambaiting through coauthor Sima Jafarikhah. UNCW's scholars profile lists her as a presenter. The symposium schedule lists Abhishek Satyam of Fordham University for that session. This record does not claim a university-operated service.",
+      "website": "https://www.uncw.edu/",
+      "logo_url": null,
+      "country": "US",
+      "parent_institution": null,
+      "department": null,
+      "points_of_contact": [],
+      "capabilities": [
+        {
+          "capability_id": "cap-uncw-agentic-scambaiting",
+          "name": "Strategic Agentic Scambaiting",
+          "capability_type": "research_model",
+          "summary": "eCrime 2026 formal model of defensive agents interacting with scam agents.",
+          "description": "The APWG eCrime 2026 accepted-paper roll describes The Promise of Strategic Agentic Scambaiting as a formal model of agent-to-agent fraud interactions. Named authors are Abhishek Satyam and Juntao Chen (Fordham University), Hossein Siadati (Cybera Global), Haadi Jafarian (University of Colorado Denver), and Sima Jafarikhah (University of North Carolina Wilmington). The public abstract discusses modeled conditions for defensive scambaiting. No released simulator, dataset, or access method was identified for this record.",
+          "threat_categories": ["scam", "financial_fraud"],
+          "keywords": ["scambaiting", "agentic", "UNCW", "formal model", "Sima Jafarikhah"],
+          "data_characteristics": {
+            "data_types": [],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": [],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "unverified",
+            "access_level": "unknown",
+            "request_url": null,
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "The Promise of Strategic Agentic Scambaiting",
+              "authors": [
+                "Abhishek Satyam",
+                "Hossein Siadati",
+                "Haadi Jafarian",
+                "Sima Jafarikhah",
+                "Juntao Chen"
+              ],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "describes_capability"
+            }
+          ],
+          "references": {
+            "project_url": "https://scholars.uncw.edu/display/d391255869440",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "unverified",
+            "sharing_confirmed": false,
+            "claimed_by_provider": false,
+            "source_url": "https://scholars.uncw.edu/display/d391255869440",
+            "last_verified_at": "2026-11-04"
+          }
+        }
+      ]
+    }
+  ]
+}

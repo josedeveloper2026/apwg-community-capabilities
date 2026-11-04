@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Base title="Page not found">
+  <div class="wrap page-head">
+    <h1>That page is not in the registry.</h1>
+    <p class="lede">The directory, organization profiles, and capability details use stable addresses under this site.</p>
+    <p><a class="button" href={base}>Back to discover</a></p>
+  </div>
+</Base>

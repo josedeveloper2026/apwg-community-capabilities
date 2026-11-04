@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Organizations" active="organizations" description="Organizations in the APWG community capability registry.">
+  <div id="directory-root"></div>
+</Base>
+<script>
+  import { mountDirectory } from '../../scripts/directory';
+  const root = document.getElementById('directory-root');
+  if (root) mountDirectory(root);
+</script>

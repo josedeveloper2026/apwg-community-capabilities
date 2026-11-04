@@ -1,0 +1,112 @@
+{
+  "schema_version": "0.1.0",
+  "entities": [
+    {
+      "entity_id": "org-example-university",
+      "name": "Example University Security Lab",
+      "entity_type": "academic",
+      "description": "Research laboratory studying phishing and cybercrime.",
+      "website": "https://example.org",
+      "logo_url": null,
+      "country": "US",
+      "parent_institution": "Example University",
+      "department": "Computer Science",
+      "points_of_contact": [
+        {
+          "name": "Jane Smith",
+          "title": "Research Scientist",
+          "role": "primary",
+          "email": "jane@example.org",
+          "profile_url": null
+        }
+      ],
+      "capabilities": [
+        {
+          "capability_id": "cap-phishing-detection",
+          "name": "Phishing URL Detection Service",
+          "capability_type": "detection_service",
+          "summary": "Detects potentially malicious URLs.",
+          "description": "A research service that analyzes URLs and identifies potential phishing activity.",
+          "threat_categories": ["phishing", "credential_theft"],
+          "keywords": ["URL classification", "phishing detection"],
+          "data_characteristics": {
+            "data_types": ["url", "classification"],
+            "formats": ["application/json"],
+            "update_frequency": "on_demand",
+            "geographic_coverage": ["global"],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["api"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": {
+              "description": "URL to evaluate",
+              "format": "application/json",
+              "fields": [
+                {
+                  "name": "url",
+                  "type": "string",
+                  "required": true,
+                  "description": "Candidate URL"
+                }
+              ]
+            },
+            "output": {
+              "description": "Phishing classification",
+              "format": "application/json",
+              "fields": [
+                {
+                  "name": "classification",
+                  "type": "string",
+                  "required": true,
+                  "description": "Predicted label"
+                },
+                {
+                  "name": "confidence",
+                  "type": "number",
+                  "required": false,
+                  "description": "Classification confidence"
+                }
+              ]
+            }
+          },
+          "access": {
+            "availability": "unverified",
+            "access_level": "unknown",
+            "request_url": null,
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "Example Research on Phishing Detection",
+              "authors": ["Jane Smith"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": null,
+              "relationship": "describes_capability"
+            }
+          ],
+          "references": {
+            "project_url": null,
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": null
+          },
+          "verification": {
+            "status": "unverified",
+            "sharing_confirmed": false,
+            "claimed_by_provider": false,
+            "source_url": null,
+            "last_verified_at": null
+          }
+        }
+      ]
+    }
+  ]
+}

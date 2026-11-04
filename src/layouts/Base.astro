@@ -1,0 +1,72 @@
+---
+import '@fontsource/source-serif-4/500.css';
+import '@fontsource/source-serif-4/600.css';
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/500.css';
+import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  active?: 'discover' | 'organizations' | 'add' | 'about';
+  description?: string;
+}
+const { title, active, description = 'Search cybersecurity capabilities shared across the APWG community.' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const links = [
+  { id: 'discover', href: base, label: 'Discover' },
+  { id: 'organizations', href: `${base}organizations/`, label: 'Organizations' },
+  { id: 'about', href: `${base}about/`, label: 'About Us' },
+];
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#132e2c" />
+    <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
+    <title>{title} · APWG Community Capabilities</title>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href={base}>
+          <span class="brand-mark" aria-hidden="true">⊕</span>
+          <span>
+            <span class="brand-kicker">APWG community</span>
+            <span class="brand-name">Capability Registry</span>
+          </span>
+        </a>
+        <nav aria-label="Primary">
+          {links.map((link) => (
+            <a href={link.href} aria-current={active === link.id ? 'page' : undefined}>{link.label}</a>
+          ))}
+          <a class="nav-cta" href={`${base}add/`} aria-current={active === 'add' ? 'page' : undefined}>Add Capability</a>
+        </nav>
+      </div>
+    </header>
+    <div id="local-banner" class="local-banner"></div>
+    <main id="main">
+      <noscript>
+        <div class="wrap" style="padding-top:1rem">
+          <p class="callout callout-unverified">Search runs in the browser. Enable JavaScript to use it. The published records are in src/data/registry.json.</p>
+        </div>
+      </noscript>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>A prototype for discovering what the cybersecurity research community can do, not only what it has published.</p>
+        <p>Seed records were compiled from public sources on 4 Nov 2026. None are marked provider-confirmed. This site does not host datasets or run detection services.</p>
+      </div>
+    </footer>
+    <script>
+      import { mountLocalBanner } from '../scripts/banner';
+      const banner = document.getElementById('local-banner');
+      if (banner) mountLocalBanner(banner);
+    </script>
+  </body>
+</html>
