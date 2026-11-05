@@ -215,5 +215,5 @@ export function notFound(title: string, message: string, href: string, label: st
 }
 
 export function editLink(entityId: string): HTMLAnchorElement {
-  return el('a', { class: 'button secondary', text: 'Edit in this browser', attrs: { href: editUrl(entityId) } });
+  return el('a', { class: 'button secondary', text: 'Request an update', attrs: { href: editUrl(entityId) } });
 }

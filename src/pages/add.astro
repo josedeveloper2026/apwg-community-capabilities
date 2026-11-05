@@ -1,11 +1,45 @@
 ---
 import Base from '../layouts/Base.astro';
+
+const email = 's.h.siadaty@gmail.com';
+const mailto = `mailto:${email}?subject=${encodeURIComponent('Add or update a capability')}`;
 ---
-<Base title="Add a capability" active="add" description="Add an organization and its capabilities to the local registry.">
-  <div id="editor-root"></div>
+<Base title="Add/Edit Capability" active="add" description="Email Hossein Siadati to add or edit a capability in the registry.">
+  <div class="wrap about">
+    <header class="page-head">
+      <p class="kicker">Contribute</p>
+      <h1>Add/Edit Capability</h1>
+      <p class="lede">For now, email Hossein Siadati with the details below. He will add the record or update an existing one. A better interface for this is in progress.</p>
+    </header>
+    <section>
+      <h2>Contact</h2>
+      <p>Hossein Siadati</p>
+      <p><a href={mailto}>{email}</a></p>
+      <p><a class="button" href={mailto}>Email Hossein</a></p>
+    </section>
+    <section>
+      <h2>What to send</h2>
+      <p>Include what you know. Leave out anything you are not sure of.</p>
+      <h3>Organization</h3>
+      <ul>
+        <li>Name</li>
+        <li>Type: academic, nonprofit, commercial, government, community, or other</li>
+        <li>A short description of the organization</li>
+        <li>Website</li>
+        <li>Country, if you want it listed</li>
+        <li>A public point of contact, if you want one listed: name, role, and email</li>
+      </ul>
+      <h3>Each capability</h3>
+      <ul>
+        <li>Name</li>
+        <li>Type: dataset, intelligence feed, detection service, collection service, analysis tool, research, platform, or other</li>
+        <li>What it does</li>
+        <li>Threat categories it covers</li>
+        <li>Who can use it, and how someone requests access</li>
+        <li>Links to the project, documentation, or a publication</li>
+        <li>Whether you are confirming this description yourself</li>
+      </ul>
+      <p>For an update, name the organization and the capability already in the registry, and say what should change.</p>
+    </section>
+  </div>
 </Base>
-<script>
-  import { mountEditor } from '../scripts/editor';
-  const root = document.getElementById('editor-root');
-  if (root) mountEditor(root);
-</script>

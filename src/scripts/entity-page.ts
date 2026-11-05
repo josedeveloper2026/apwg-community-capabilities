@@ -34,7 +34,7 @@ export function mountEntity(root: HTMLElement): void {
   titleBlock.append(pills);
   titleRow.append(el('div', { class: 'monogram', attrs: { 'aria-hidden': 'true' } }, monogram(entity.name)), titleBlock);
   head.append(titleRow);
-  if (saved) head.append(el('p', { class: 'callout callout-confirmed', text: 'Saved in this browser. It is included in search on this computer. Export JSON from Add Capability if you want to propose it for the shared registry.' }));
+  if (saved) head.append(el('p', { class: 'callout callout-confirmed', text: 'Saved in this browser. It is included in search on this computer. Email Hossein Siadati from Add/Edit Capability if you want it in the shared registry.' }));
 
   const main = el('article', { class: 'detail-main prose' });
   main.append(el('p', { text: entity.description }));
@@ -73,7 +73,7 @@ export function mountEntity(root: HTMLElement): void {
   if (site) aside.append(site);
   aside.append(el('h2', { text: 'Contact' }));
   aside.append(contacts(entity.points_of_contact));
-  aside.append(el('a', { class: 'button', text: 'Edit in this browser', attrs: { href: editUrl(entity.entity_id) } }));
+  aside.append(el('a', { class: 'button', text: 'Request an update', attrs: { href: editUrl(entity.entity_id) } }));
   const download = el('button', { class: 'button secondary', text: 'Download this record', attrs: { type: 'button' } });
   download.addEventListener('click', () => downloadJson(`${entity.entity_id}.json`, entity));
   aside.append(download);

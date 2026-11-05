@@ -23,7 +23,7 @@ export function mountDiscover(root: HTMLElement): void {
     el('p', { class: 'lede', text: 'A searchable registry of threat intelligence, datasets, detection systems, and research services from organizations connected to the APWG community.' }),
     el('div', { class: 'actions' },
       el('a', { class: 'button', text: 'Search the registry', attrs: { href: '#search' } }),
-      el('a', { class: 'button secondary', text: 'Add your capability', attrs: { href: page('add/') } }),
+      el('a', { class: 'button secondary', text: 'Add/Edit Capability', attrs: { href: page('add/') } }),
     ),
   );
   const stats = el('section', { class: 'stats', attrs: { 'aria-label': 'Registry summary' } });
@@ -113,7 +113,7 @@ export function mountDiscover(root: HTMLElement): void {
     if (hits.length === 0) {
       results.append(el('div', { class: 'empty' },
         el('p', { text: 'Nothing in the published registry or this browser matches. Clear a filter, or add a record.' }),
-        el('p', {}, el('a', { class: 'button', text: 'Add a capability', attrs: { href: page('add/') } })),
+        el('p', {}, el('a', { class: 'button', text: 'Add/Edit Capability', attrs: { href: page('add/') } })),
       ));
       return;
     }
