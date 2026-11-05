@@ -1838,6 +1838,230 @@
           }
         }
       ]
+    },
+    {
+      "entity_id": "org-proofpoint",
+      "name": "Proofpoint",
+      "entity_type": "commercial",
+      "description": "Proofpoint publishes the Emerging Threats network-signature rulesets. ET Open is a public download. ET Pro is a licensed ruleset, and Proofpoint's ET Pro materials describe a private malware exchange used in that research. The APWG eCrime 2026 program lists a session by Davide Canali. Proofpoint has not reviewed this registry entry.",
+      "website": "https://www.proofpoint.com/",
+      "logo_url": null,
+      "country": "US",
+      "parent_institution": null,
+      "department": null,
+      "points_of_contact": [
+        {
+          "name": "Emerging Threats",
+          "title": "Community and support",
+          "role": "primary",
+          "email": "support@emergingthreats.net",
+          "profile_url": "https://community.emergingthreats.net/"
+        }
+      ],
+      "capabilities": [
+        {
+          "capability_id": "cap-proofpoint-et-open",
+          "name": "Emerging Threats Open rules",
+          "capability_type": "intelligence_feed",
+          "summary": "Public Snort and Suricata network signatures from Proofpoint Emerging Threats.",
+          "description": "Emerging Threats, a division of Proofpoint, publishes the ET Open ruleset for Snort and Suricata. The provider's download instructions give version-specific archives at rules.emergingthreats.net and say the ruleset is updated once daily on weekdays, with occasional out-of-band updates. The Emerging Threats FAQ describes the open rules as free and BSD-licensed, and says they come from community contributions or from Proofpoint signatures based on community research. Signatures written from Proofpoint's own malware analysis and sensor network are not placed in ET Open. A public rules directory also includes a GPL-2.0 license file, so this record does not assign one license to every signature.",
+          "threat_categories": ["malware", "phishing", "malicious_infrastructure"],
+          "keywords": ["Emerging Threats", "ET Open", "Snort", "Suricata", "network signatures"],
+          "data_characteristics": {
+            "data_types": ["network_signature"],
+            "formats": ["snort", "suricata"],
+            "update_frequency": "once daily on weekdays, with occasional out-of-band updates",
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["download"],
+            "endpoint_url": null,
+            "documentation_url": "https://rules.emergingthreats.net/OPEN_download_instructions.html",
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "published",
+            "access_level": "public",
+            "request_url": "https://rules.emergingthreats.net/open/",
+            "authentication": "none described",
+            "license": null,
+            "usage_restrictions": [
+              "The download instructions say not to fetch the ruleset more often than once per hour."
+            ],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [],
+          "references": {
+            "project_url": "https://community.emergingthreats.net/t/frequently-asked-questions/56",
+            "repository_url": null,
+            "dataset_url": "https://rules.emergingthreats.net/open/",
+            "presentation_url": null
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://rules.emergingthreats.net/OPEN_download_instructions.html",
+            "last_verified_at": "2026-11-05"
+          }
+        },
+        {
+          "capability_id": "cap-proofpoint-et-pro",
+          "name": "Emerging Threats Pro rules",
+          "capability_type": "intelligence_feed",
+          "summary": "Licensed Snort and Suricata signatures that include Proofpoint's own research.",
+          "description": "Proofpoint's ET Pro datasheet describes a daily Snort and Suricata ruleset covering malware delivery, command and control, credential phishing, and other network activity. The Emerging Threats FAQ says signatures created from Proofpoint research, including malware detonation and the global sensor network, go into ET Pro and are not automatically copied into ET Open. ET Pro is licensed per Snort or Suricata sensor. The FAQ says a one-year single-sensor license can be purchased. A stable public purchase URL was not identified for this record.",
+          "threat_categories": ["malware", "phishing", "malicious_infrastructure"],
+          "keywords": ["Emerging Threats", "ET Pro", "Snort", "Suricata", "network signatures"],
+          "data_characteristics": {
+            "data_types": ["network_signature"],
+            "formats": ["snort", "suricata"],
+            "update_frequency": "daily",
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["download"],
+            "endpoint_url": null,
+            "documentation_url": "https://www.proofpoint.com/sites/default/files/pfpt-us-ds-et-pro-ruleset.pdf",
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "operational",
+            "access_level": "restricted",
+            "request_url": "https://community.emergingthreats.net/t/frequently-asked-questions/56",
+            "authentication": "license required",
+            "license": null,
+            "usage_restrictions": [
+              "The FAQ says a standard license covers an organization's own assets, and redistribution requires an OEM license."
+            ],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [],
+          "references": {
+            "project_url": "https://www.proofpoint.com/sites/default/files/pfpt-us-ds-et-pro-ruleset.pdf",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": null
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://www.proofpoint.com/sites/default/files/pfpt-us-ds-et-pro-ruleset.pdf",
+            "last_verified_at": "2026-11-05"
+          }
+        },
+        {
+          "capability_id": "cap-proofpoint-malware-exchange",
+          "name": "Emerging Threats malware exchange",
+          "capability_type": "collection_service",
+          "summary": "Private exchange where participating organizations share malware samples that Proofpoint analyzes.",
+          "description": "Proofpoint's ET Pro ruleset datasheet describes one of its research inputs as a private malware exchange. It says more than 70 organizations participate, about 3,000,000 malware samples are analyzed every day, and about 300,000 of those samples are new each day. The same page describes sandbox analysis as part of producing network signatures. It does not identify a public page where someone outside those organizations can submit a binary or retrieve a scan report.",
+          "threat_categories": ["malware"],
+          "keywords": ["malware exchange", "malware samples", "Emerging Threats"],
+          "data_characteristics": {
+            "data_types": ["malware_sample"],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": [],
+            "endpoint_url": null,
+            "documentation_url": "https://www.proofpoint.com/sites/default/files/pfpt-us-ds-et-pro-ruleset.pdf",
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "limited",
+            "access_level": "restricted",
+            "request_url": null,
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [],
+          "references": {
+            "project_url": "https://www.proofpoint.com/sites/default/files/pfpt-us-ds-et-pro-ruleset.pdf",
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": null
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://www.proofpoint.com/sites/default/files/pfpt-us-ds-et-pro-ruleset.pdf",
+            "last_verified_at": "2026-11-05"
+          }
+        },
+        {
+          "capability_id": "cap-proofpoint-job-offer-kill-chain",
+          "name": "Job-offer kill chain research session",
+          "capability_type": "research_model",
+          "summary": "eCrime 2026 session by Davide Canali of Proofpoint.",
+          "description": "The APWG eCrime 2026 program lists The Kill Chain Starts with a Job Offer - Turning Your Workflow Against You at 9:15, presented by Davide Canali of Proofpoint. No abstract, dataset, or access method was identified for this session. It is listed separately from the Emerging Threats rulesets and the private malware exchange.",
+          "threat_categories": ["social_engineering"],
+          "keywords": ["eCrime 2026", "Davide Canali", "job offer"],
+          "data_characteristics": {
+            "data_types": [],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": [],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "unverified",
+            "access_level": "unknown",
+            "request_url": null,
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "The Kill Chain Starts with a Job Offer - Turning Your Workflow Against You",
+              "authors": ["Davide Canali"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "describes_capability"
+            }
+          ],
+          "references": {
+            "project_url": null,
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "unverified",
+            "sharing_confirmed": false,
+            "claimed_by_provider": false,
+            "source_url": "https://www.apwg.org/events/ecrime2026",
+            "last_verified_at": "2026-11-05"
+          }
+        }
+      ]
     }
   ]
 }
