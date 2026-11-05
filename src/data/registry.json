@@ -1493,6 +1493,134 @@
       ]
     },
     {
+      "entity_id": "org-ufl",
+      "name": "University of Florida",
+      "entity_type": "academic",
+      "description": "The University of Florida is listed on the APWG eCrime 2026 program for two research sessions by Allison Lu, one on mobile messaging scams and one on a Telegram scam-support ecosystem. A public data repository accompanies the mobile-messaging study. This record does not claim a university-operated service.",
+      "website": "https://www.ufl.edu/",
+      "logo_url": null,
+      "country": "US",
+      "parent_institution": null,
+      "department": null,
+      "points_of_contact": [],
+      "capabilities": [
+        {
+          "capability_id": "cap-ufl-mms-dataset",
+          "name": "Mobile messaging scam dataset",
+          "capability_type": "dataset",
+          "summary": "Public data and scripts for a study of mobile messaging scams drawn from Reddit.",
+          "description": "The repository at https://github.com/mobile-scam-analysis/mms-characterization says it accompanies the paper Read This Paper to Get $50 Million: An Analysis of Mobile Messaging Scams Using Reddit Data. The APWG eCrime 2026 program lists that title with Allison Lu of the University of Florida. The repository contains a scam_data folder and a scripts folder. A license and file format were not identified for this record.",
+          "threat_categories": ["scam"],
+          "keywords": ["MMS", "Reddit", "mobile messaging", "Allison Lu"],
+          "data_characteristics": {
+            "data_types": ["messaging_scam_records"],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["download"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "published",
+            "access_level": "public",
+            "request_url": "https://github.com/mobile-scam-analysis/mms-characterization",
+            "authentication": "none described",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "Read This Paper to Get $50 Million: An Analysis of Mobile Messaging Scams Using Reddit Data",
+              "authors": ["Allison Lu"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "describes_capability"
+            }
+          ],
+          "references": {
+            "project_url": null,
+            "repository_url": "https://github.com/mobile-scam-analysis/mms-characterization",
+            "dataset_url": "https://github.com/mobile-scam-analysis/mms-characterization/tree/main/scam_data",
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": false,
+            "source_url": "https://github.com/mobile-scam-analysis/mms-characterization",
+            "last_verified_at": "2026-11-05"
+          }
+        },
+        {
+          "capability_id": "cap-ufl-telegram-scam-support",
+          "name": "Telegram scam support ecosystem study",
+          "capability_type": "research_model",
+          "summary": "eCrime 2026 research session on a Telegram scam-support ecosystem.",
+          "description": "The APWG eCrime 2026 program lists \"I'm in Boss. What Next?\": Characterizing the Telegram Scam Support Ecosystem, presented by Allison Lu of the University of Florida. The public mobile-messaging repository names a different paper. No dataset was identified for this Telegram session.",
+          "threat_categories": ["scam"],
+          "keywords": ["Telegram", "scam support", "Allison Lu"],
+          "data_characteristics": {
+            "data_types": [],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": [],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": [],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "unverified",
+            "access_level": "unknown",
+            "request_url": null,
+            "authentication": "unknown",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [
+            {
+              "title": "\"I'm in Boss. What Next?\": Characterizing the Telegram Scam Support Ecosystem",
+              "authors": ["Allison Lu"],
+              "year": 2026,
+              "venue": "APWG eCrime 2026",
+              "doi": null,
+              "url": "https://www.apwg.org/events/ecrime2026",
+              "relationship": "describes_capability"
+            }
+          ],
+          "references": {
+            "project_url": null,
+            "repository_url": null,
+            "dataset_url": null,
+            "presentation_url": "https://www.apwg.org/events/ecrime2026"
+          },
+          "verification": {
+            "status": "unverified",
+            "sharing_confirmed": false,
+            "claimed_by_provider": false,
+            "source_url": "https://www.apwg.org/events/ecrime2026",
+            "last_verified_at": "2026-11-05"
+          }
+        }
+      ]
+    },
+    {
       "entity_id": "org-vicomtech",
       "name": "Vicomtech",
       "entity_type": "academic",
@@ -1651,7 +1779,7 @@
           "name": "Strategic Agentic Scambaiting",
           "capability_type": "research_model",
           "summary": "eCrime 2026 formal model of defensive agents interacting with scam agents.",
-          "description": "The APWG eCrime 2026 accepted-paper roll describes The Promise of Strategic Agentic Scambaiting as a formal model of agent-to-agent fraud interactions. Named authors are Abhishek Satyam and Juntao Chen (Fordham University), Hossein Siadati (Cybera Global), Haadi Jafarian (University of Colorado Denver), and Sima Jafarikhah (University of North Carolina Wilmington). The public abstract discusses modeled conditions for defensive scambaiting. No released simulator, dataset, or access method was identified for this record.",
+          "description": "The APWG eCrime 2026 accepted-paper roll describes The Promise of Strategic Agentic Scambaiting as a formal model of agent-to-agent fraud interactions. Named authors are Abhishek Satyam and Juntao Chen (Fordham University), Hossein Siadati (Cybera Global), Haadi Jafarian (University of Colorado Denver), and Sima Jafarikhah (University of North Carolina Wilmington). The public abstract discusses modeled conditions for defensive scambaiting. A project page is listed at https://ai-scambaiting.pages.dev/. No dataset or access method was identified for this record.",
           "threat_categories": ["scam", "financial_fraud"],
           "keywords": ["scambaiting", "agentic", "UNCW", "formal model", "Sima Jafarikhah"],
           "data_characteristics": {
@@ -1696,7 +1824,7 @@
             }
           ],
           "references": {
-            "project_url": "https://scholars.uncw.edu/display/d391255869440",
+            "project_url": "https://ai-scambaiting.pages.dev/",
             "repository_url": null,
             "dataset_url": null,
             "presentation_url": "https://www.apwg.org/events/ecrime2026"
