@@ -6,6 +6,7 @@ import '@fontsource/ibm-plex-sans/500.css';
 import '@fontsource/ibm-plex-sans/600.css';
 import '@fontsource/ibm-plex-mono/400.css';
 import '../styles/global.css';
+import { latestUpdate } from '../lib/updated';
 
 interface Props {
   title: string;
@@ -13,6 +14,7 @@ interface Props {
   description?: string;
 }
 const { title, active, description = 'Search cybersecurity capabilities shared across the APWG community.' } = Astro.props;
+const updated = latestUpdate();
 const base = import.meta.env.BASE_URL;
 const links = [
   { id: 'discover', href: base, label: 'Discover' },
@@ -29,7 +31,7 @@ const links = [
     <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
     <title>{title} · APWG Community Capabilities</title>
   </head>
-  <body>
+  <body data-updated-iso={updated.iso} data-updated-label={updated.label}>
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap header-inner">
@@ -59,6 +61,7 @@ const links = [
     </main>
     <footer class="site-footer">
       <div class="wrap">
+        <p>Last updated <time datetime={updated.iso}>{updated.label}</time>.</p>
         <p>A prototype for discovering what the cybersecurity research community can do, not only what it has published.</p>
         <p>Seed records were compiled from public sources on 4 Nov 2026. None are marked provider-confirmed. This site does not host datasets or run detection services.</p>
       </div>

@@ -21,6 +21,7 @@ export function mountDiscover(root: HTMLElement): void {
     el('p', { class: 'kicker', text: 'APWG eCrime 2026 prototype' }),
     el('h1', { text: 'Discover cybersecurity research community capabilities.' }),
     el('p', { class: 'lede', text: 'A searchable registry of threat intelligence, datasets, detection systems, and research services from organizations connected to the APWG community.' }),
+    updatedLine(),
     el('div', { class: 'actions' },
       el('a', { class: 'button', text: 'Search the registry', attrs: { href: '#search' } }),
       el('a', { class: 'button secondary', text: 'Add/Edit Capability', attrs: { href: page('add/') } }),
@@ -195,6 +196,13 @@ function filterSelect(
   select.value = selected[0] ?? '';
   select.addEventListener('change', () => onChange(select.value));
   return el('label', { class: 'filter-field' }, el('span', { text: label }), select);
+}
+
+function updatedLine(): HTMLElement | false {
+  const label = document.body.dataset.updatedLabel;
+  const iso = document.body.dataset.updatedIso;
+  if (!label) return false;
+  return el('p', { class: 'updated' }, 'Last updated ', el('time', { text: label, attrs: { datetime: iso } }), '.');
 }
 
 function readQuery(): SearchQuery {
