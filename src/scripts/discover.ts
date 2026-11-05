@@ -19,7 +19,7 @@ export function mountDiscover(root: HTMLElement): void {
 
   const hero = el('header', { class: 'hero' },
     el('p', { class: 'kicker', text: 'APWG eCrime 2026 prototype' }),
-    el('h1', { text: 'Discover what the cybersecurity research community can do, not just what it has published.' }),
+    el('h1', { text: 'Discover cybersecurity research community capabilities.' }),
     el('p', { class: 'lede', text: 'A searchable registry of threat intelligence, datasets, detection systems, and research services from organizations connected to the APWG community.' }),
     el('div', { class: 'actions' },
       el('a', { class: 'button', text: 'Search the registry', attrs: { href: '#search' } }),
