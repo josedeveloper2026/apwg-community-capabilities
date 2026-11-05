@@ -961,7 +961,7 @@
       "entity_id": "org-interisle",
       "name": "Interisle Consulting Group",
       "entity_type": "commercial",
-      "description": "Interisle Consulting Group publishes measurement studies of phishing, malware, spam, and the domain-name resources used in those attacks. Dave Piscitello and Greg Aaron are listed to present Cybercrime Supply Chain 2026 at APWG eCrime 2026.",
+      "description": "Interisle Consulting Group publishes measurement studies of phishing, malware, spam, and the domain-name resources used in those attacks. It publishes the Cybercrime Information Center, a public repository of those studies and of activity tables. Dave Piscitello and Greg Aaron are listed to present Cybercrime Supply Chain 2026 at APWG eCrime 2026.",
       "website": "https://interisle.net/",
       "logo_url": null,
       "country": null,
@@ -974,7 +974,7 @@
           "name": "Cybercrime Supply Chain studies",
           "capability_type": "research_model",
           "summary": "Annual public measurements of resources used in malware, phishing, and spam.",
-          "description": "Interisle's site describes Cybercrime Supply Chain 2026 as a study of where criminals obtain attack resources, following earlier editions in the same series. The homepage summary discusses malware, phishing, and spam events and bulk domain registration. A direct report file was not identified for this record, so the link is the organization homepage. Raw event data is not described as a public download.",
+          "description": "The Cybercrime Information Center, published by Interisle, describes Cybercrime Supply Chain 2026 as a study of where criminals obtain attack resources, following earlier editions in the same series. A direct report file was not identified for this record. Separate phishing, malware, and spam activity tables are listed in the Center's records repository.",
           "threat_categories": ["phishing", "malware", "malicious_infrastructure"],
           "keywords": ["cybercrime supply chain", "domain registration", "measurement", "Interisle"],
           "data_characteristics": {
@@ -1008,7 +1008,7 @@
               "year": 2026,
               "venue": "Interisle Consulting Group",
               "doi": null,
-              "url": "https://interisle.net/",
+              "url": "https://www.cybercrimeinfocenter.org/",
               "relationship": "describes_capability"
             },
             {
@@ -1022,17 +1022,64 @@
             }
           ],
           "references": {
-            "project_url": "https://interisle.net/",
+            "project_url": "https://www.cybercrimeinfocenter.org/",
             "repository_url": null,
-            "dataset_url": null,
+            "dataset_url": "https://www.cybercrimeinfocenter.org/records-repository",
             "presentation_url": "https://www.apwg.org/events/ecrime2026"
           },
           "verification": {
             "status": "documented",
             "sharing_confirmed": false,
             "claimed_by_provider": true,
-            "source_url": "https://interisle.net/",
-            "last_verified_at": "2026-11-04"
+            "source_url": "https://www.cybercrimeinfocenter.org/",
+            "last_verified_at": "2026-11-05"
+          }
+        },
+        {
+          "capability_id": "cap-interisle-records",
+          "name": "Cybercrime Information Center records",
+          "capability_type": "dataset",
+          "summary": "Public activity tables for phishing, malware, and spam.",
+          "description": "The Cybercrime Information Center describes itself as a repository of studies, measurements, data sets, and statistics on threats that use the Domain Name System and Internet numbering systems. Its records repository lists phishing, malware, and spam activity tables by top-level domain, registrar, and hosting network. The tables are published for investigators and researchers to use. File formats, a license, and an API were not identified for this record.",
+          "threat_categories": ["phishing", "malware", "malicious_infrastructure"],
+          "keywords": ["Cybercrime Information Center", "records repository", "TLD", "registrar", "hosting", "spam"],
+          "data_characteristics": {
+            "data_types": ["activity_table"],
+            "formats": [],
+            "update_frequency": null,
+            "geographic_coverage": ["global"],
+            "temporal_coverage": null
+          },
+          "interface": {
+            "delivery_methods": ["web_portal"],
+            "endpoint_url": null,
+            "documentation_url": null,
+            "input": null,
+            "output": null
+          },
+          "access": {
+            "availability": "published",
+            "access_level": "public",
+            "request_url": "https://www.cybercrimeinfocenter.org/records-repository",
+            "authentication": "none described",
+            "license": null,
+            "usage_restrictions": [],
+            "privacy_notes": null
+          },
+          "points_of_contact": [],
+          "related_publications": [],
+          "references": {
+            "project_url": "https://www.cybercrimeinfocenter.org/",
+            "repository_url": null,
+            "dataset_url": "https://www.cybercrimeinfocenter.org/records-repository",
+            "presentation_url": null
+          },
+          "verification": {
+            "status": "documented",
+            "sharing_confirmed": false,
+            "claimed_by_provider": true,
+            "source_url": "https://www.cybercrimeinfocenter.org/records-repository",
+            "last_verified_at": "2026-11-05"
           }
         },
         {
